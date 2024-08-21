@@ -1,4 +1,4 @@
-package dev.otthon.clientservice;
+package dev.otthon.clientserv;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

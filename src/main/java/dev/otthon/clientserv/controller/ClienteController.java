@@ -2,6 +2,7 @@ package dev.otthon.clientserv.controller;
 
 import dev.otthon.clientserv.model.Cliente;
 import dev.otthon.clientserv.repository.ClienteRepository;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +17,7 @@ public class ClienteController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Cliente cadastrar(@RequestBody Cliente cliente) {
+    public Cliente cadastrar(@RequestBody @Valid Cliente cliente) {
         return clienteRepository.save(cliente);
     }
 

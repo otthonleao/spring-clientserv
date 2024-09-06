@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/clientes")
 @CrossOrigin("http://localhost:4200")
@@ -20,6 +22,11 @@ public class ClienteController {
     @ResponseStatus(HttpStatus.CREATED)
     public Cliente cadastrar(@RequestBody @Valid Cliente cliente) {
         return clienteRepository.save(cliente);
+    }
+
+    @GetMapping
+    public List<Cliente> obterTodos() {
+        return clienteRepository.findAll();
     }
 
     @GetMapping("{id}")
